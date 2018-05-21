@@ -3,7 +3,6 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
-import matplotlib.pyplot as plt
 
 # Import data
 data = pd.read_csv('01_data/data_stocks.csv')
@@ -92,12 +91,9 @@ opt = tf.train.AdamOptimizer().minimize(mse)
 net.run(tf.global_variables_initializer())
 
 # Setup plot
-plt.ion()
-fig = plt.figure()
 ax1 = fig.add_subplot(111)
 line1, = ax1.plot(y_test)
 line2, = ax1.plot(y_test * 0.5)
-plt.show()
 
 # Fit neural net
 batch_size = 256
@@ -131,5 +127,3 @@ for e in range(epochs):
             # Prediction
             pred = net.run(out, feed_dict={X: X_test})
             line2.set_ydata(pred)
-            plt.title('Epoch ' + str(e) + ', Batch ' + str(i))
-            plt.pause(0.01)
