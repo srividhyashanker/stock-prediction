@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
 # Import data
-data = pd.read_csv('01_data/data_stocks.csv')
+data = pd.read_csv('../01_data/data_stocks.csv')
 
 # Drop date variable
 data = data.drop(['DATE'], 1)
