@@ -90,10 +90,6 @@ opt = tf.train.AdamOptimizer().minimize(mse)
 # Init
 net.run(tf.global_variables_initializer())
 
-# Setup plot
-line1, = ax1.plot(y_test)
-line2, = ax1.plot(y_test * 0.5)
-
 # Fit neural net
 batch_size = 256
 mse_train = []
