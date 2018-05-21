@@ -91,7 +91,6 @@ opt = tf.train.AdamOptimizer().minimize(mse)
 net.run(tf.global_variables_initializer())
 
 # Setup plot
-ax1 = fig.add_subplot(111)
 line1, = ax1.plot(y_test)
 line2, = ax1.plot(y_test * 0.5)
 
