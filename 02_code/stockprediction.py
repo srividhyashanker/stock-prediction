@@ -121,4 +121,3 @@ for e in range(epochs):
             print('MSE Test: ', mse_test[-1])
             # Prediction
             pred = net.run(out, feed_dict={X: X_test})
-            line2.set_ydata(pred)
