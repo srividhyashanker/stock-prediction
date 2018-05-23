@@ -123,3 +123,4 @@ for e in range(epochs):
             print("out ", out, "y ", Y)
             # Prediction
             pred = net.run(out, feed_dict={X: X_test})
+            print("prediction ", pred)
