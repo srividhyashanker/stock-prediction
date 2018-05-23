@@ -119,8 +119,9 @@ for e in range(epochs):
             mse_test.append(net.run(mse, feed_dict={X: X_test, Y: y_test}))
             print('MSE Train: ', mse_train[-1])
             print('MSE Test: ', mse_test[-1])
-            print("----")
-            print("out ", out, "y ", Y)
+            # print("----")
+            
             # Prediction
             pred = net.run(out, feed_dict={X: X_test})
-            print("prediction ", pred)
+            # print("prediction ", pred)
+print("out ", out, "y ", Y)
