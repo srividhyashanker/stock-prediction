@@ -126,9 +126,14 @@ for e in range(epochs):
             pred = net.run(out, feed_dict={X: X_test})
             # print("prediction ", pred)
 print('The final error is: ', mse_test[-1])
+lenarr = []
+count = 0
+for elem in mse_test:
+    lenarr.append(count)
+    count = count + 1
 csv_out = open('outputfile.csv', 'wb')
 mywriter = csv.writer(csv_out)
-rows = zip(mse_test)
+rows = zip(lenarr, mse_test)
 mywriter.writerows(rows)
 csv_out.close()
 
