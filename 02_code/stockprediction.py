@@ -126,10 +126,10 @@ for e in range(epochs):
             pred = net.run(out, feed_dict={X: X_test})
             # print("prediction ", pred)
 print('The final error is: ', mse_test[-1])
-# csv_out = open('outputfile.csv', 'wb')
-# mywriter = csv.writer(csv_out)
-# rows = zip(mse_test)
-# mywriter.writerows(rows)
-# csv_out.close()
+csv_out = open('outputfile.csv', 'wb')
+mywriter = csv.writer(csv_out)
+rows = zip(mse_test)
+mywriter.writerows(rows)
+csv_out.close()
 
 
