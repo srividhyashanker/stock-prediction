@@ -80,10 +80,9 @@ hidden_4 = tf.nn.relu(tf.add(tf.matmul(hidden_3, W_hidden_4), bias_hidden_4))
 
 # Output layer (transpose!)
 out = tf.transpose(tf.add(tf.matmul(hidden_4, W_out), bias_out))
-out_print = tf.Print(out)
-y_print = tf.Print(Y)
+out_print = tf.Print(out, [out, Y])
 # Cost function
-mse = tf.reduce_mean(tf.squared_difference(out_print, y_print))
+mse = tf.reduce_mean(tf.squared_difference(out_print, Y))
 
 # Optimizer
 opt = tf.train.AdamOptimizer().minimize(mse)
@@ -125,4 +124,4 @@ for e in range(epochs):
             # Prediction
             pred = net.run(out, feed_dict={X: X_test})
             # print("prediction ", pred)
-print("out ", out, "y ", Y)
+
