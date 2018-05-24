@@ -3,6 +3,7 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
+import csv
 
 # Import data
 data = pd.read_csv('../01_data/data_stocks.csv')
@@ -117,11 +118,18 @@ for e in range(epochs):
             # MSE train and test
             mse_train.append(net.run(mse, feed_dict={X: X_train, Y: y_train}))
             mse_test.append(net.run(mse, feed_dict={X: X_test, Y: y_test}))
-            print('MSE Train: ', mse_train[-1])
+            # print('MSE Train: ', mse_train[-1])
             print('MSE Test: ', mse_test[-1])
             # print("----")
             
             # Prediction
             pred = net.run(out, feed_dict={X: X_test})
             # print("prediction ", pred)
+print('The final error is: ', mse_test[-1])
+csv_out = open('outputfile.csv', 'wb')
+mywriter = csv.writer(csv_out)
+rows = zip(mse_test)
+mywriter.writerows(rows)
+csv_out.close()
+
 
