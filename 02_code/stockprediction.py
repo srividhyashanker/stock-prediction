@@ -131,7 +131,7 @@ count = 0
 for elem in mse_test:
     lenarr.append(count)
     count = count + 1
-csv_out = open('outputfile.csv', 'wb')
+csv_out = open('outputfile.txt', 'wb')
 mywriter = csv.writer(csv_out)
 rows = zip(lenarr, mse_test)
 mywriter.writerows(rows)
