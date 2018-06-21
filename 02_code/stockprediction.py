@@ -1,4 +1,5 @@
 #credit goes to Sebastian Heinz
+#Link: https://medium.com/mlreview/a-simple-deep-learning-model-for-stock-price-prediction-using-tensorflow-30505541d877
 # Import
 import tensorflow as tf
 import numpy as np
