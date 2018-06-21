@@ -1,3 +1,4 @@
+#credit goes to Sebastian Heinz
 # Import
 import tensorflow as tf
 import numpy as np
